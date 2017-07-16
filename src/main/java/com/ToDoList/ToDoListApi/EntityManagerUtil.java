@@ -18,7 +18,7 @@ public class EntityManagerUtil {
   private static final EntityManagerFactory entityManagerFactory;
   static {
     try {
-      entityManagerFactory = Persistence.createEntityManagerFactory("MyBase");
+      entityManagerFactory = Persistence.createEntityManagerFactory("com.ToDoList_ToDoListApi_war_0.0.1-SNAPSHOTPU");
 
     } catch (Throwable ex) {
       System.err.println("Initial SessionFactory creation failed." + ex);
@@ -31,3 +31,4 @@ public class EntityManagerUtil {
 
   }
 }
+
