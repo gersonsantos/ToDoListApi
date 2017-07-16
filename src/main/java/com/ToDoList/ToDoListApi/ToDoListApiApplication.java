@@ -2,7 +2,7 @@ package com.ToDoList.ToDoListApi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+import javax.persistence.EntityManager;
 import java.util.Collection;
 import java.util.stream.Stream;
 import javax.persistence.Entity;
@@ -25,7 +25,7 @@ public class ToDoListApiApplication {
 		SpringApplication.run(ToDoListApiApplication.class, args);
 	}
 }
-
+/*
 @Entity
 class Reservation {
     @Id
@@ -49,6 +49,7 @@ class Reservation {
     }
 }
 
+
 @RepositoryRestResource //Esto es para usar Spring Data y se pretende usar Hibernate
 interface ReservationRepository extends JpaRepository {
     @RestResource(path = "by-name")
@@ -65,4 +66,4 @@ class DummyCLR implements CommandLineRunner {
            repository.save(new Reservation(x)));
         repository.findAll().forEach(System.out::println);
     }
-}
+}*/
