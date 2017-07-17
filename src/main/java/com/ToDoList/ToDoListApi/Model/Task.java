@@ -23,21 +23,32 @@ public class Task implements java.io.Serializable {
   private long taskId;
   @Column(name = "NAME")
   private String Name;
+  @Column(name = "DESCRIPTION")
+  private String Description;
+  
 
-  public void setTaskId(long studentId) {
-    this.taskId = studentId;
+  public void setTaskId(long taskId) {
+    this.taskId = taskId;
   }
 
   public long getTaskId() {
     return taskId;
   }
 
-  public void setTaskName(String studentName) {
-    this.Name = studentName;
+  public void setTaskName(String taskName) {
+    this.Name = taskName;
   }
 
   public String getTaskName() {
     return Name;
   }
+    public String getDescription() {
+      return Description;
+  }
+
+  public void setDescription(String Description) {
+      this.Description = Description;
+  }
+
 
 }

@@ -50,12 +50,12 @@ public class ToDoListApiApplication {
                 //This is for populating the database  
     TaskHandler example = new TaskHandler();
     System.out.println("After Sucessfully insertion ");
-    Task task1 = example.saveTask("Sumith");
-    Task task2 = example.saveTask("Anoop");
+    Task task1 = example.saveTask("Crear","Crear un proyecto");
+    Task task2 = example.saveTask("Editar","Editar un proyecto");
     //example.listStudent();
     System.out.println("After Sucessfully modification ");
-    example.updateTask(task1.getTaskId(), "Sumith Honai");
-    example.updateTask(task2.getTaskId(), "Anoop Pavanai");
+    example.updateTask(task1.getTaskId(), "Sumith Honai","Crear un proyecto");
+    example.updateTask(task2.getTaskId(), "Anoop Pavanai","Editar un proyecto");
     //example.listStudent();
     System.out.println("After Sucessfully deletion ");
     example.deleteTask(task2.getTaskId());

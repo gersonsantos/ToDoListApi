@@ -18,11 +18,12 @@ import javax.persistence.EntityManager;
 public class TaskHandler {
     private EntityManager entityManager = EntityManagerUtil.getEntityManager();
     
-    public Task saveTask(String taskName) {
+    public Task saveTask(String taskName, String descriptionTask) {
         Task task = new Task();
         try {
           entityManager.getTransaction().begin();
           task.setTaskName(taskName);
+          task.setDescription(descriptionTask);
           task = entityManager.merge(task);
           entityManager.getTransaction().commit();
         } catch (Exception e) {
@@ -46,15 +47,18 @@ public class TaskHandler {
     }
   }
 
-  public void updateTask(Long taskId, String taskName) {
+  public Task updateTask(Long taskId, String taskName, String descTask) {
     try {
       entityManager.getTransaction().begin();
       Task task = (Task) entityManager.find(Task.class, taskId);
       task.setTaskName(taskName);
+      task.setDescription(descTask);
       entityManager.getTransaction().commit();
+      return task;
     } catch (Exception e) {
       entityManager.getTransaction().rollback();
     }
+    return null;
   }
 
   public void deleteTask(Long taskId) {
